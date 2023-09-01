@@ -1,0 +1,42 @@
+{% extends 'base.html' %}
+
+{% block title %} |  endblock %}
+
+
+{% block content %}
+
+<!--rt -->
+ass="su overview-bgi">s="container breadcrumb-area">
+        <div class="breadcru         <h1>Dashboard</h1>
+		                <ul class="breadcrumbs">
+					                   <li>>Home</a></li>
+							                   <li class="active">{{ user.first_name }}</li>
+										          </di</div>
+											  </div>
+											  <!-- Dashboard Start   -->
+
+											  <div class="er mt-50 mb-50">
+												          {% include 'incsages.html' %}
+													  	<div class="main-title" style="text-align:importan           <h1>Welcome <span>{{ user.first_name }}</span></h1>
+																	{nquiries %}
+																				<p>Here are the cars that you have inquired about</p>
+																				        </div>
+																							<lass="table tab">
+																										<thead>
+																														  <tr>
+																															  				<th scope="col">#</th>
+																																			 scope="col">Car Name</th>
+																																		 				<th scopeion</th>
+																																										<th scope="col"<tbody>
+																																											   			{% for in inquiri			  <tr>
+																																																		<th scope="row{ inquiry.car_title }}</td>
+																																																			   				<td>{{ inquiry.city }r_id %k">View Car</a></
+																																																										     			{% endfor %}
+																																																															/table>
+																																																																	{% else %}have no s</h4>
+																																																																			{% endif %}
+											  </div>
+
+											  <!--   Dashboard-->
+
+{% endblock %}
