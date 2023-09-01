@@ -1,0 +1,65 @@
+{% extends 'base.html' %}
+
+{% block title %} | Register {% endblock %}
+
+{% load v class="sub-banner overview-bgi">
+    <div class="container breadcrumb-arediv class="breadcrumb-areas">
+		            <h1>Register</h1>
+			                <ul class="breadcrumbs">
+						                   <li><a href="{% url 'home' %}">Home</a></li>
+										                <li clRegister</li>
+												            </ul>
+													            </div>
+														        </div>
+															</div>
+															<!-- Sub Banner end -->
+
+															<!-- Contact section start -->
+															<div class="contact-section">
+																        <div class="lass="col-lg-12 col-md-12">
+																		                <div class="form-section">
+																					                    <div class="logo-2">
+																								                            <a href="{% url 'home' %}">
+																												                                <img src="{% statack-logo.png' %}" alt="logo">
+																																                        </a>
+																																			                    </div>
+																																					                        <h3e an account</h3>
+
+																																							                    {% include 'include/messages.html' %}
+																																									                        <form action="{'register' %}" method                {% csrf_token                      <div class="formorm-box"                        <input type="text" name="firstname" class="input-text" placeholdered>
+																																														                            <i class="fa fa-user"></i                   </div>
+																																													                        <div class="form-group form-box">
+																																																	                            <input type="tex="lastname" class="input-text" placeholder="Last Name" required>
+																																																						                             <i class="fa fa-user"></i>
+																																																										                       </div>
+																																																												                               <div class="form-group                          <input type="name="username" class="input-text" placeholder="Username" required>
+																																																																	                               <i class="fa fa-user"></i>
+																																																																						                         </div>
+																																																																									                         <div class="form-group form-box">
+																																																																													                                 <input type="email" name="email" class="input-text" placeholder="Email Address" required>
+																																																																																		                    i class="flaticon-mail"></i>
+																																																																																					                             </div>
+																																																																																								                             <div class="
+																																																																																												                              <input type="password" nssword" class="input-text" placeholdesword" required                       <i class="flaticon-lock"></i>
+																																																																																															                              </div>
+																																																																																												                             <div class="form-group form-box">
+																																																																																																                                 <input type="password" name="confirm_password" class="input-text" placeholder="Confirm Password" required>
+																																																																																																				                             <i claticon-l/i>
+																																																																																																								                             </div>
+																																																																																																											                             <div class="form-group mb-0 clearfix">                      <button type="submit" class="btn-md btn-theme float-center">Registe             </div>
+																																																																																																														                             <div clasclearfix                         <span>Or Login With</span>
+																																																																																																																		                             </di                    <div class="clearfix"></div>
+																																																																																																																					                             <al-list">
+																																																																																																																									                  <li><a href="{% prlogin_url 'facebook' method='oauth2' %}" class="facebook-bg"><i class="fa fa-facebook facebook-i><span>Face>
+																																																																																																																															                        href="{% provider_ll 'google' %}" class="google-bg"><i class="fa fa-google google-i"></i><span>Google</span></a></li>
+																																																																																																																											                          </ul>
+																																																																																																																														                      </form>
+																																																																																																																																                          <p>Already a member? <a href="{% url 'login' %}" class="thembo"> Login here</a></p>
+																																																																																																																																			                  </div>
+																																																																																																																																					              </div>
+																																																																																																																																						              </div>
+																																																																																																																																							          </div>
+																																																																																																																																								  </div>
+																																																																																																																																								  <!-- Contact section end -->
+
+																																																																																																																																								  {% endblock %}
