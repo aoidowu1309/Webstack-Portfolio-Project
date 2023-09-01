@@ -1,0 +1,174 @@
+{% extends 'base.html' %}
+
+{k title %} | rs Inventory {ock %}lock content %}
+
+{% load humanize %}
+
+<!-- Sub banner start -->iew-bgi">
+    ass="container breadcrumb-area">
+            <div class="breadcrumb-areas">
+		                <h1>Our Car Inventory</h1>
+				    <ul class="brs">
+					                    <li><a href="{'home' %></li>
+									                 <li class="a  </ul>
+				            </div/div>
+					    </div>
+					    <!-- Sub Banner endeatured car start -->
+					    <ss="fear content-area">
+					        <div class="con>
+							            <div class="row">
+										            <dg-8 col-md-12">
+												                    <div class="row">
+															                        {% for car %}
+																		                    <div class="col-lg-6 col-md-6">
+																					                            <s="car-box-3">
+																									                          div class="car-                              <l 'car_detail' car.id %}" clr-img">
+																												                                      <div class="tag"Rent</div>
+																																                                  <div class="price-box">
+																																					    {{ car.price | intcomma }} USD per day<                            </div>
+																																				                                      <img class="d-block w-100" src="{{ car.car_photo" alt="car" style="min-height: 262px; max-height: 262px;">
+																																								                              </a                           <div class="carbox-overlap-wrapper">
+																																												                                  erlap-box">
+																																																                                          <div class="overlap-btns-area">
+																																																						                                              <div class="car-magnify-gallery">
+																																																												                                                      <a href="{{ car.car_photo.url }}" class="overlap-btn">
+																																																																			                                                          <i class="fa fa-expand"></i>
+																																																																										                                                      <img class="hidden" src="{{ car.car_photo.url }}">
+																																																																																                                                             {% if car.car_photo_1 %}
+																																																																																							                                                     <a href="{{ car.car_photo_1.url }}" class="hidden" >
+																																																																																														                                                 <img class="hidden" src="{car_photo_1.url }}">
+																																																																																																				                                                 </a>
+																																																																																														                                                     {% endif %}
+																																																																																																				                                                     {% if car.car_photo_2 %}
+																																																																																																										                                             <a hre_photo_2.url }}" class="hidden">
+																																																																																																																		                                                       <i="hidden" src="{{ car.car_photo_2.url }}">
+																																																																																																																									                                                   </a>
+																																																																																																																															                                                   {% endif %}
+																																																																																																																																					                                                   {% if car.car_photo_3 %}
+																																																																																																																																											                                                   <a href="{{ car.car_photo_3.url }}"hidden">
+																																																																																																																																																		                                                       <img class="hirc="{{ car.car_photo_3.url }}">
+																																																																																																																																																										                                                   </a>
+																																																																																																																																																																                                                   {% endif %}
+																																																																																																																																																																						                                           photo_4 %}
+																																																																																																																																																																											                                                   <a href="{{ car.car_photo_4.url }}" class="hidden" >
+																																																																																																																																																																																		                                        <img class="hidden" src="{{ car.car_photo_4.url }}">
+																																																																																																																																																																																								                                                    </a>
+																																																																																																																																																																																														                                                    {% endif %}
+																																																																																																																																																																																																				                                                                                 </div>
+																																																																																																																																																																																																														                       /div>
+																																																																																																																																																																																																																                                       </div>
+																																																																																																																																																																																																																				                           </div>
+																																																																																																																																																																																																																							                       <div class="detail">
+																																																																																																																																																																																																																											                                   <h1 class="title">
+																																																																																																																																																																																																																																                                          <a href="{% url 'car_detail' car.id %}">{{ car.car_title }}</a>
+																																																																																																																																																																																																																																						                                   </h1>
+																																																																																																																																																																																																																																										                                   <div class="location">
+																																																																																																																																																																																																																																															                                           <a href="{% url 'car_detail' ca                                      <i class="flaticon-pin"></i>{{ car.state }}, {{ car.city }}
+																																																																																																																																																																																																																																																					                               </a>
+																																																																																																																																																																																																																																																								                                       </div>
+																																																																																																																																																																																																																																																												                                       <ul class="facilities-list clearfix">
+																																																																																																																																																																																																																																																																	                                 {{ car.fuel_type }}</li>
+											                                     <li>{{ car.miles | intcomma }}                         <li>{{ car.sion }}</li>
+																                                         <li>{{ car.body_style }}</li>
+																					                                     <li>{{ car.color }}</li>
+																									                                    i>{{ car.year }}</li>
+															                                ul>
+																			                            </div>
+																						                            </div       </div>
+																									                        {% endfor %}
+																												                </!-- Page navigation start -->
+																														                <div class="pagination-box p-box-2 text-center">
+																																	            <nav aria-label="Page navigation example">                  {% if cars.has_other_pages %}
+																																			            <ul class="pagination">
+																																					                                {% if cars.has_previous %}
+																																									                    <li class="page-item">
+																																												                                    <a class="page-lif="?page={{ cars.previous_page_number }}"><i class="fa fa-angle-left"></i></a>
+																																																	                                  </li>
+																																																					                      {% else %}
+																																																							                                  <li class="page-item disabled">
+																																																												                                     <a class="page-link"><i class="fa fa-angle-left"></i></a>
+																																																																	                                   </li>
+																																																																					                               {% endif %}
+
+                        {% for npage in cars.paginator.page_range %}
+			                            {% if cars.number == npage %}
+						                                <li nk active" href="#">{{ npage }}</a></li>
+										                            {% else %}
+													                                <li class="page-item"><a class="page-link" href="?page={{ npage }}">{{ npage }}</a></li>
+																	                    {% endif %}
+																			                            {% endfor %}
+
+																						                            {% if cars.has_next %}
+																									                                <li class="page-item">
+																														                                <a class="page-link" href="?page={{ cars.next_page_number }}"><i class="fa fa-angle-right"></i></a>
+																																		                            </li>
+																																					                            {% else %}
+																																								                                <li class="page-item disabled">
+																																													                                <a class="page-link"><i class="fa fa-angle-right"></i></a>
+																																																	                            </li>
+																																																				                            {% endif %}
+																																																							                    </ul>
+																																																									                            {% endif %}
+																																																												                        </nav>
+																																																															                </div>
+																																																																	            </div>
+																																																																		                <div class="col-lg-4 col-md-12">
+																																																																					               lass="sidebar-right">
+																																																																						                           <!-- Advanced search start -->
+																																																																									       <div class="widget advanced-search2">
+																																																																										                               <="sidebar-title">Search your desire car</h3   <form action="{% url 'search' %}" method="">
+																																																																													                           <div class="form-group">
+																																																																																	                                   <input type="text" name="keyword" placeholder="Search by name" class="form-control">
+																																																																																					                               </div>
+																																																																																								                                   <div class="form-g
+																																																																																													                                       <select class="form-control search-fields" name="model">
+																																																																																																			                                          <option selected="true" d"disabled">Model</option>
+																																																																																																										                                        {% for model in model_search %}
+																																																																																																															                                    <option value="{{ model }}">{{ model }}</option>
+																																																																																																																					                                       {% endfor %}
+																																																																																																																									                                       </select>
+																																																																																																																													                                   </div>
+																																																																																																																																	                               <div class="form-group">
+																																																																																																																																						                                   <select class="form-control search-fields" name="city">
+																																																																																																																																												                                      <option selected="true" disabled="disabled">Location</option>
+																																																																																																																																																			                                    {% for city in city_search %}
+																																																																																																																																																							                                        <option value="{{ city }}">{{ city }}</option>
+																																																																																																																																																													                                           {% endfor %}
+																																																																																																																																																																		                                   </select>
+																																																																																																																																																																						                      
+																																																																																																																																																																								                                  <div class="form-group">
+																																																																																																																																																																													                                      <select class="form-control search-fields" name="year">
+																																																																																																																																																																																			                                         <option selected="true" disabled="disabled">Year</option>
+																																																																																																																																																																																										                                       {% for year in year_search %}
+																																																																																																																																																																																														                                           <option value="{{ year }}">{{ year }}</option>
+																																																																																																																																																																																																					                                      {% endfor %}
+																																																																																																																																																																																																									                                      </select>
+																																																																																																																																																																																																													                                  </div>
+																																																																																																																																																																																																																	                    class="form-group">
+																																																																																																																																																																																																																				                                   <select class="form-control search-fields" name="body_style">
+																																																																																																																																																																																																																										                                      <option selected="true" disabled="disabled">Select Type Of Car</option>
+																																																																																																																																																																																																																																	                        option value="{{ body }}">{{ body }}</option>
+																																																																																																																																																																																																																																					                                                              <div data-min="0" data-m                                  <div class="clearfix"></div>
+																																																																																																																																																																																																																																														                                             </div>
+																																																																																																																																																																																																																																																			                                    <button class="btn btn-block bume btn-md">
+																																																																																																																																																																																																																																																									                                       <i class="fa fa-sear/i> Search
+																																																																																																																																																																																																																																																														             </button>
+																																																																																																																																																																																																																																																															                                 </div>
+																																																																																																																																																																																																																																																																			                         </form>
+																																																																																																																																																																																																																																																																						                         
+																																																																																																																																																																																																																																																																						                    -- Question start -->             <div class="widget question widge                <h5 class="sidebar-title">Follow us</h5>
+																																																																																																																																																																																																																																																																														                  <div class="soix">
+																																																																																																																																																																																																																																																																																	                               
+																																																																																																																																																																																																																																																																																				                               <li><a href="#" class="facebook-bg"><i class="fa fa-facebooi></a></li>
+																																																																																																																																																																																																																																																																																							                                       <li><a href="#" cwitter-bg"><i class="witter"></i></a></li>
+																																																																																																																																																																																																																																																																																													                            <href="#" class="google-bg"><i class="fa fa-google-plus"></i></a></li>
+																																																																																																																																																																																																																																																																																																	                                   <bg"><i class="fa fa-rss"><a></li>
+																																																																																																																																																																																																																																																																																																						                        <a href="#" class="linkedin-bg"><i class="fa fa-linkedin"></i></a></li>
+																																																																																																																																																																																																																																																																																																								                            </ul>
+																																																																																																																																																																																																																																																																																																											                            </div>
+																																																																																																																																																																																																																																																																																																														                </div>
+																																																																																																																																																																																																																																																																																																																                </div>
+																																																																																																																																																																																																																																																																																																																		            </div>
+																																																																																																																																																																																																																																																																																																																			       Featured car end -->
+
+																																																																																																																																																																																																																																																																																																																			       {% endblock %}
