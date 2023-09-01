@@ -1,0 +1,36 @@
+<!-- Top header start -->
+<header class="top-header th-2 top-header-bg">
+	    <div class="container">
+		            <div class="row">
+				                <div class="col-lg--8 col-sm-7">
+							        e">
+								                    <a href="tel:+55-4XX-634-7071">ss="fa fa-phone"></i812</a>
+										                        <a href="tel:info@themevessel.com"><-envelope"></.com</a>
+														                     <a href="tel:info@themevessel.com"><i class="fa fo"></i>Mon - Sat:pm</a>
+																	                      </div>
+																			                  </div>
+																					              <div class="col-lg-4 col-md-4 col-sm-5">
+																								                  ss="top-social-media pull-right">
+																										                          {% if user.is%}
+																													                             ="{% url 'dashboard' %}" class="sign-in" fa-tachometer"></i> Dashboard</a>
+																														                     <li>
+																																	                             <a href="java{document.getElementById('logout').submit()}" class="sign-in"><i class="fn-out"></i> Logout</a>
+																																				                             <form action="{% url 'logout' %}" id="logoOST">
+																																								                                 {% csrf_token %}
+																																												                             <input type="hidden">
+																																															                             </form>
+																																																		                         </li>
+																																																					                     {% else %}
+																																																							                         <li>
+																																																											                         <a href="{% url 'login' %}" class="sign-in"><i class="fa fa-sign-in"></i> Login</a>
+																																																														                     </li>
+																																																																                         <li>
+																																																																				                         <a{% url 'register' %}" class="sign-in"><i class="fa fa-user"></i> Register</a>
+																																																																										                    </li>
+																																																																												                        {% endif %}
+																																																																															                </ul>
+																																																																																	            </div>
+																																																																																		            </div>
+																																																																																			        </div>
+</header>
+<!-- Top header end -->
