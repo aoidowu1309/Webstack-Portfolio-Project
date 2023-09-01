@@ -1,1 +1,1 @@
-Webstack Portfolio Project
+RentApp is a web app for leasing out cars designed for cars dealers or owners who want to list their cars on the car lease webapp. This Car lease app allows users, leasees or clients to come to the RentApp to browse through all available cartigory of cars and featured cars on the website. Clients can also search through a variety of the latest cars based on brands, prices, colours, speed and more on this App.
